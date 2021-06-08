@@ -1,11 +1,24 @@
 import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.scss";
-import Header from "./components/Header";
+import Nav from "./components/Nav";
+import MovieList from "./components/MovieList";
+import MovieInfo from "./components/MovieInfo";
 
 function App() {
   return (
     <div className="App">
-      <Header />
+      <Router>
+        <Nav />
+        <Switch>
+          <Route exact path="/">
+            <MovieList />
+          </Route>
+          <Route exact path="/Movie">
+            <MovieInfo />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }

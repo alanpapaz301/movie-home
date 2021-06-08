@@ -36,7 +36,7 @@ const MovieList = () => {
       return (
         <>
           <div className="movies-container">
-            <h2>Top 20 most popular movies</h2>
+            <h2>Top 20 Filmes mais populares do momento</h2>
             <div className="movies-grid">
               {movieList.results.map((movie, index) => (
                 <div>
@@ -47,8 +47,8 @@ const MovieList = () => {
                     className="poster"
                     src={
                       movie.poster_path != null
-                        ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-                        : `https://image.tmdb.org/t/p/w780${movie.backdrop_path}`
+                        ? `https://image.tmdb.org/t/p/original${movie.poster_path}`
+                        : `https://image.tmdb.org/t/p/original${movie.backdrop_path}`
                     }
                     alt="No Image available"
                   ></img>
@@ -61,13 +61,12 @@ const MovieList = () => {
     } else
       return (
         <div>
-          <h1>Nothing to see here</h1>;
+          <h1 className="loadingList">Loading..</h1>;
         </div>
       );
   };
   return (
     <>
-      <Filter filter={filter} handleFilterChange={handleFilterChange} />
       <Render />
     </>
   );

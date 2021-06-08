@@ -16,22 +16,4 @@ const searchMovie = (movieName) => {
   return request.then((response) => response.data);
 };
 
-const randomID = () => {
-  axios
-    .get(
-      `https://api.themoviedb.org/3/movie/latest?api_key=430f826e807233e21fff30e2c309d7a8&language=en-US`
-    )
-    .then((response) => {
-      console.log("id", response.data.id);
-      let id = Math.floor(Math.random() * response.data.id + 1);
-
-      return id;
-    });
-};
-const randomMovie = () => {
-  let req = axios.get(
-    `https://api.themoviedb.org/3/movie/405?api_key=430f826e807233e21fff30e2c309d7a8&language=en-US`
-  );
-  return req.then((response) => response.data);
-};
-export default { getPopularMovies, searchMovie, randomMovie };
+export default { getPopularMovies, searchMovie };
