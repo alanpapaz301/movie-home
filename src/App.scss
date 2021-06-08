@@ -4,15 +4,31 @@
   margin: 0;
   box-sizing: border-box;
 }
+.App {
+  font-family: "Poppins", sans-serif;
+}
+#searchFilter {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  margin: 10px;
+}
+.movies-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
 .nav-links {
-  font-family: "Inter", sans-serif;
   display: flex;
   justify-content: space-around;
+  align-items: center;
   height: 5vh;
   background-color: rgb(31, 30, 30);
   color: white;
   flex-direction: row;
-
+  ul {
+    list-style-type: none;
+  }
   a {
     text-decoration: none;
     color: white;
@@ -25,10 +41,14 @@
 .movies-grid {
   margin-top: 10vh;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   align-items: center;
-  gap: 10px;
+  gap: 4vmin;
+  text-align: center;
+}
+.movieTitle {
+  font-size: 2vmin;
 }
 .poster {
-  width: 25vh;
+  width: 27vmin;
 }

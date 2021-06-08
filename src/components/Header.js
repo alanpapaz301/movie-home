@@ -2,6 +2,7 @@ import "../App.scss";
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import MovieList from "./MovieList";
+import MovieInfo from "./MovieInfo";
 
 const Header = () => {
   return (
@@ -10,7 +11,10 @@ const Header = () => {
         <nav className="nav-links">
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/">Lista</Link>
+            </li>
+            <li>
+              <Link to="Movie">Detalhes</Link>
             </li>
           </ul>
         </nav>
@@ -26,6 +30,9 @@ const Header = () => {
         <Switch>
           <Route exact path="/">
             <MovieList />
+          </Route>
+          <Route exact path="/Movie">
+            <MovieInfo />
           </Route>
         </Switch>
       </div>

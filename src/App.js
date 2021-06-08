@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./App.scss";
 import Header from "./components/Header";
-import MovieList from "./components/MovieList";
 
 function App() {
   return (
