@@ -44,12 +44,9 @@ $base-blue: #3b99c4;
     color: $base-blue;
   }
 }
-#searchFilter {
-  display: flex;
-  justify-content: center;
-  padding: 10px;
-  margin: 10px;
+.loading {
   color: $base-white;
+  text-align: center;
 }
 .movies-container {
   display: flex;
@@ -68,19 +65,23 @@ $base-blue: #3b99c4;
 .movies-grid {
   margin-top: 10vh;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(
+      0,
+      1fr
+    );
   align-items: flex-end;
   text-align: center;
   grid-row-gap: 40px;
 }
+
 .movieTitle {
-  font-size: 1.5vmax;
+  font-size: 1.3vmax;
   color: $base-white;
 }
 .poster {
   height: 40vmin;
   width: 30vmin;
-  object-fit: contain;
+  object-fit: cover;
 }
 .movieDetails {
   margin-top: 40px;
@@ -91,14 +92,32 @@ $base-blue: #3b99c4;
   h1 {
     color: $base-white;
   }
+
+  button {
+    width: 150px;
+    border: 1px solid black;
+    background: $base-blue;
+    cursor: pointer;
+    padding: 5px;
+    font-weight: 700;
+    outline: none;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    color: white;
+  }
+  button:hover {
+    filter: brightness(0.5);
+  }
 }
 .img_overview {
+  margin-top: 40px;
   display: flex;
   width: 100%;
   justify-content: space-evenly;
   align-items: center;
   img {
-    width: auto;
+    width: 50vmin;
   }
 
   p {
@@ -107,8 +126,49 @@ $base-blue: #3b99c4;
     font-size: 2.5vmin;
   }
 }
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .movies-grid {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+  .movieTitle {
+    font-size: 2.5vmax;
+  }
+  .poster {
+    height: 60vmin;
+    width: 40vmin;
+    object-fit: contain;
+  }
+}
+@media (max-width: 600px) {
+  .nav-links {
+    a {
+      font-size: 6vmin;
+    }
+    h1 {
+      font-size: 7vmin;
+    }
+  }
+  .img_overview {
+    flex-direction: column;
+
+    p {
+      width: 90%;
+      font-size: 3.5vmin;
+    }
+
+    img {
+      width: 70vmin;
+    }
+  }
+}
+@media (max-width: 350px) {
+  .movies-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .poster {
+    height: 100vmin;
+    width: 90vmin;
+    object-fit: contain;
   }
 }
