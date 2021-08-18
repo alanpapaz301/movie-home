@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./MovieList.scss";
 import movieService from "../../services/movies";
 
@@ -36,9 +37,11 @@ const MovieList = () => {
                         ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
                         : `https://image.tmdb.org/t/p/original${movie.backdrop_path}`
                     }
-                    alt="No Image available"
+                    alt="No Poster available"
                   ></img>
-                  <button className="details-btn">Detalhes</button>
+                  <Link to={`Movie/${movie.id}`}>
+                    <button className="details-btn">Detalhes</button>
+                  </Link>
                 </div>
               ))}
             </div>

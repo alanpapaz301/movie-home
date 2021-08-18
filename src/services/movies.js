@@ -7,5 +7,11 @@ const getPopularMovies = (page) => {
   );
   return request.then((response) => response.data);
 };
+const getMovieById = (movie_id) => {
+  const request = axios.get(
+    `https://api.themoviedb.org/3/movie/${movie_id}?api_key=${API_KEY}&language=pt-BR`
+  );
+  return request.then((response) => response.data);
+};
 
-export default { getPopularMovies };
+export default { getPopularMovies, getMovieById };

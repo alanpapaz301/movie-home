@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "./MovieInfo.scss";
 import movieService from "../../services/movies";
+import { useParams } from "react-router-dom";
 
 const MovieInfo = () => {
   const [movie, setMovie] = useState("");
-
+  let { id } = useParams();
   //Carrega as informações de um filme aleatorio entre os resultados mais populares
-  const getMovie = () => {
+  const getRandomMovie = () => {
     let randomPage = Math.floor(Math.random() * 500);
     movieService.getPopularMovies(randomPage).then((data) => {
       let randomMovieIndex = Math.floor(Math.random() * data.results.length);
@@ -15,18 +16,25 @@ const MovieInfo = () => {
     });
   };
 
+  const getSelectedMovie = () => {
+    movieService.getMovieById(id).then((data) => {
+      setMovie(data);
+      console.log(data);
+    });
+  };
+
   useEffect(() => {
-    getMovie();
+    getSelectedMovie();
   }, []);
 
-  if (movie !== "") {
+  if (movie !== "" && movie !== undefined) {
     return (
       <div className="movieDetails">
         <h1>
           {movie.hasOwnProperty("title") ? movie.title : movie.name}(
           {movie.release_date.substring(0, 4)})
         </h1>
-        <button onClick={() => getMovie()}>Mostre-me outro filme!</button>
+        <button onClick={() => getRandomMovie()}>Mostre-me outro filme!</button>
         <div className="img_overview">
           <img
             className="big_poster"

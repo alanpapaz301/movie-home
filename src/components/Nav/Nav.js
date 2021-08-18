@@ -9,11 +9,12 @@ const Nav = () => {
         <h1>MovieList</h1>
         <ul>
           <li>
-            <Link to="/">Lista</Link>
+            <Link to="/">Trending</Link>
           </li>
-          <li>
+          {/*<li>
             <Link to="/Movie">Detalhes</Link>
           </li>
+          */}
         </ul>
       </nav>
     </div>

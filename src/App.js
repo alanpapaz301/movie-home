@@ -17,6 +17,9 @@ function App() {
           <Route exact path="/Movie">
             <MovieInfo />
           </Route>
+          <Route exact path="/Movie/:id">
+            <MovieInfo />
+          </Route>
         </Switch>
       </Router>
     </div>
