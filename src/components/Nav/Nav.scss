@@ -1,0 +1,42 @@
+@import "../../master";
+
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 5vh;
+
+  ul {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    list-style-type: none;
+  }
+  a {
+    text-decoration: none;
+    color: $base-white;
+    font-size: 3vmin;
+    font-weight: 500;
+  }
+  h1 {
+    font-size: 3.3vmin;
+    color: $base-blue;
+    margin-left: 20px;
+  }
+
+  a:hover {
+    color: $base-blue;
+  }
+}
+@media (max-width: 600px) {
+  .nav-links {
+    a {
+      font-size: 6vmin;
+    }
+    h1 {
+      font-size: 7vmin;
+    }
+  }
+}

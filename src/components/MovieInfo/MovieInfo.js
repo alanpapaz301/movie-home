@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import "../styles/App.scss";
-import movieService from "../services/movies";
+import "./MovieInfo.scss";
+import movieService from "../../services/movies";
 
 const MovieInfo = () => {
   const [movie, setMovie] = useState("");

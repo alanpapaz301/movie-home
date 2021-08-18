@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import "../styles/App.scss";
-import movieService from "../services/movies";
+import "./MovieList.scss";
+import movieService from "../../services/movies";
 
 const MovieList = () => {
   const [movieList, setMovieList] = useState(null);
@@ -38,6 +38,7 @@ const MovieList = () => {
                     }
                     alt="No Image available"
                   ></img>
+                  <button className="details-btn">Detalhes</button>
                 </div>
               ))}
             </div>

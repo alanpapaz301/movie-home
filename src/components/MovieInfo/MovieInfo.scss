@@ -1,0 +1,64 @@
+@import "../../master";
+
+.loading {
+  color: $base-white;
+  text-align: center;
+}
+
+.movieDetails {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    color: $base-white;
+  }
+
+  button {
+    width: 150px;
+    border: 1px solid black;
+    background: $base-blue;
+    cursor: pointer;
+    padding: 5px;
+    font-weight: 700;
+    outline: none;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    color: white;
+  }
+  button:hover {
+    filter: brightness(0.5);
+  }
+}
+.img_overview {
+  margin-top: 40px;
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  img {
+    width: 50vmin;
+  }
+
+  p {
+    width: 40vmax;
+    color: $base-white;
+    font-size: 2.5vmin;
+  }
+}
+@media (max-width: 600px) {
+  .img_overview {
+    flex-direction: column;
+
+    p {
+      width: 90%;
+      font-size: 3.5vmin;
+    }
+
+    img {
+      width: 70vmin;
+    }
+  }
+}
