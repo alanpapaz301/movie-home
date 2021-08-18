@@ -1,4 +1,4 @@
-# Game-Commerce
+# Movie Home
 
 > ReactJS site made to display trending movies, with the option to search by categories and a random movie suggestion functionality. Data being pulled from The Movie Database API
 
