@@ -1,0 +1,41 @@
+@import "../../master";
+
+.genres-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: 90vh;
+
+  a {
+    list-style-type: none;
+    text-decoration: none;
+    color: $base-blue;
+  }
+}
+.genres-grid {
+  padding: 50px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(
+      0,
+      1fr
+    );
+  justify-items: center;
+  align-content: center;
+  grid-row-gap: 50px;
+  grid-column-gap: 18vmin;
+  font-size: 2.4vmin;
+}
+.genre-option {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 16vw;
+  height: 10vmin;
+  border: 1px solid $base-blue;
+}
+.genre-option:hover {
+  border: 1px solid $base-white;
+  h3 {
+    color: $base-white;
+  }
+}

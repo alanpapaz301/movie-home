@@ -6,7 +6,6 @@
 
 - ReactJS (Hooks, Browser-Router)
 - CSS(Flexbox, Grid, SASS)
-- React-Select
 - The Movie Database API
 
 ## Features

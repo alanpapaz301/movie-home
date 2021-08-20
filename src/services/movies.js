@@ -14,4 +14,11 @@ const getMovieById = (movie_id) => {
   return request.then((response) => response.data);
 };
 
-export default { getPopularMovies, getMovieById };
+const getMovieByGenre = (genre_id) => {
+  const request = axios.get(
+    `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=pt-BR&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=28&with_watch_monetization_types=flatrate`
+  );
+  return request.then((response) => response.data);
+};
+
+export default { getPopularMovies, getMovieById, getMovieByGenre };

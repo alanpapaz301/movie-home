@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "./MovieList.scss";
+import "./TrendingMovies.scss";
 import movieService from "../../services/movies";
 
-const MovieList = () => {
+const TrendingMovies = () => {
   const [movieList, setMovieList] = useState(null);
 
   //Carregamento dos 20 filmes mais populares utilizando a API Discover
@@ -61,4 +61,4 @@ const MovieList = () => {
     </>
   );
 };
-export default MovieList;
+export default TrendingMovies;
